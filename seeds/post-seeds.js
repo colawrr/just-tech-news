@@ -1,59 +1,109 @@
-const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
+const { Post } = require('../models');
 
-const userdata = [
+const postdata = [
   {
-    username: 'alesmonde0',
-    email: 'nwestnedge0@cbc.ca',
-    password: 'password123'
+    title: 'Donec posuere metus vitae ipsum.',
+    post_url: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
+    user_id: 10
   },
   {
-    username: 'jwilloughway1',
-    email: 'rmebes1@sogou.com',
-    password: 'password123'
+    title: 'Morbi non quam nec dui luctus rutrum.',
+    post_url: 'https://nasa.gov/donec.json',
+    user_id: 8
   },
   {
-    username: 'iboddam2',
-    email: 'cstoneman2@last.fm',
-    password: 'password123'
+    title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
+    post_url: 'https://europa.eu/parturient/montes/nascetur/ridiculus/mus/etiam/vel.aspx',
+    user_id: 1
   },
   {
-    username: 'dstanmer3',
-    email: 'ihellier3@goo.ne.jp',
-    password: 'password123'
+    title: 'Nunc purus.',
+    post_url: 'http://desdev.cn/enim/blandit/mi.jpg',
+    user_id: 4
   },
   {
-    username: 'djiri4',
-    email: 'gmidgley4@weather.com',
-    password: 'password123'
+    title: 'Pellentesque eget nunc.',
+    post_url: 'http://google.ca/nam/nulla/integer.aspx',
+    user_id: 7
   },
   {
-    username: 'msprague5',
-    email: 'larnout5@imdb.com',
-    password: 'password123'
+    title: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    post_url: 'https://stanford.edu/consequat.png',
+    user_id: 4
   },
   {
-    username: 'mpergens6',
-    email: 'hnapleton6@feedburner.com',
-    password: 'password123'
+    title: 'In hac habitasse platea dictumst.',
+    post_url: 'http://edublogs.org/non/ligula/pellentesque.js',
+    user_id: 1
   },
   {
-    username: 'tpenniell7',
-    email: 'kperigo7@china.com.cn',
-    password: 'password123'
+    title: 'Morbi non quam nec dui luctus rutrum.',
+    post_url: 'http://ucla.edu/consequat/nulla.html',
+    user_id: 1
   },
   {
-    username: 'msabbins8',
-    email: 'lmongain8@google.ru',
-    password: 'password123'
+    title: 'Duis ac nibh.',
+    post_url: 'http://theguardian.com/dui/vel/nisl/duis/ac/nibh.aspx',
+    user_id: 9
   },
   {
-    username: 'jmacarthur9',
-    email: 'bsteen9@epa.gov',
-    password: 'password123'
+    title: 'Curabitur at ipsum ac tellus semper interdum.',
+    post_url: 'https://reverbnation.com/ligula/sit.jpg',
+    user_id: 5
+  },
+  {
+    title: 'In hac habitasse platea dictumst.',
+    post_url: 'http://china.com.cn/lectus/vestibulum.json',
+    user_id: 3
+  },
+  {
+    title: 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.',
+    post_url: 'http://networksolutions.com/nam/ultrices/libero/non/mattis/pulvinar.json',
+    user_id: 10
+  },
+  {
+    title: 'Donec dapibus.',
+    post_url: 'https://instagram.com/ac/neque/duis/bibendum/morbi/non.xml',
+    user_id: 8
+  },
+  {
+    title: 'Nulla tellus.',
+    post_url: 'https://lycos.com/natoque/penatibus/et.html',
+    user_id: 3
+  },
+  {
+    title: 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
+    post_url: 'https://gmpg.org/lorem.jpg',
+    user_id: 3
+  },
+  {
+    title:
+      'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
+    post_url: 'https://paginegialle.it/mattis/egestas.jsp',
+    user_id: 7
+  },
+  {
+    title: 'In hac habitasse platea dictumst.',
+    post_url: 'http://wikia.com/turpis/eget.jpg',
+    user_id: 6
+  },
+  {
+    title: 'Etiam justo.',
+    post_url: 'https://shareasale.com/quis.json',
+    user_id: 4
+  },
+  {
+    title: 'Nulla ut erat id mauris vulputate elementum.',
+    post_url: 'http://java.com/diam/neque/vestibulum/eget/vulputate/ut/ultrices.png',
+    user_id: 6
+  },
+  {
+    title: 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
+    post_url: 'https://java.com/at/nibh/in.png',
+    user_id: 7
   }
 ];
 
-const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
+const seedPosts = () => Post.bulkCreate(postdata);
 
-module.exports = seedUsers;
+module.exports = seedPosts;
